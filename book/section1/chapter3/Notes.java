@@ -14,7 +14,7 @@ public class Notes
         | int       4           Integers +/- 2,147,483,647                                   |
         | long      8           Integers +/- 9,223,372,036,854,775,807                       |
         |                       (long x = 2000L)       lowercase L is bad!!!                 |
-        | float     4           Double-precision, floating-point numbers from +/- 3.4e+38    |
+        | float     4           Single-precision, floating-point numbers from +/- 3.4e+38    |
         |                        with up to 7 significant digits                             |
         |                        (float x = 2000.00F)                                        |
         | double    8           Double-precision, floating-point numbers from +/- 1.7e+308   |
@@ -104,5 +104,66 @@ public class Notes
         |                        than or equal to 0.0 and less than 1.0 |
         |--------------------------------------------------------------*/
 
+        // --------------------------------------------------------------------------
+
+        /*-----------------------------------------------------------------------------|
+        |                   Constructors for Integers and Doubles                      |
+        | --------------------        ------------------     ------------------        |
+        |       Integer(Int)                                   Double(double)          |
+        |------------------------------------------------------------------------------|
+        |                   Two Static Methods of the Integer Class                    |
+        | ---------------------      ----------------------       -----------------    |
+        | parseInt(stringName)          Attempts to convert the String objct that's    |
+        |                                supplied as an argument to an int type. If    |
+        |                                successful, it returns the int value. If      |
+        |                                unsuccessful, it throws an exception.         |
+        | toString(intName)             Converts int to a String.                      |
+        |------------------------------------------------------------------------------|
+        |                   Two Static Methods of the Double Class                     |
+        | ------------     ---------------      --------------      --------------     |
+        | parseDouble(stringName)           Converts String to Double if possible.     |
+        | toString(doubleName)              Converts Double to String                  |
+        |-----------------------------------------------------------------------------*/
+        /*-----------------------------------------------------------------------------|
+        |                                 Examples                                     |
+        | Integer quantityIntegerObject = new Integer(quantity);                       |
+        | Double priceDoubleObject = new Double(price);                                |
+        |                                                                              |
+        | STring conterString = Integer.toString(counter);                             |
+        | STring priceSTring Double.toSTring(price);                                   |
+        |                                                                              |
+        | int quantity = Integer.parseInt(quantityString);                             |
+        | double price = Dpible.parseDouble(priceSTring);                              |
+        |-----------------------------------------------------------------------------*/
+
+        // ----------------------------------------------------------------------------
+        // When converting Strings to numbers, use Big Decimals instead
+
+        /*-----------------------------------------------------------------------------|
+        |                    Big Decimals --> java.math.BigDecimal                     |
+        |------------------------------------------------------------------------------|
+        | BigDecimal(int)                       Create BigDecimal from an int          |
+        | BigDecimal(double)                    Create BigDecimal from a double        |
+        | BigDecimal(long)                      Create BigDecimal from a long          |
+        | BigDecimal(String)                    Create BigDecimal from a String        |
+        |------------------------------------------------------------------------------|
+        | add(value)          Returns the value of BigDecimal after it has been added  |
+        | compareTo(value)                   Compares two BigDecimals, and returns     |
+        |                                    -1 if less, 0 if equal, or 1 if greater   |
+        | divide(value, sacle, rounding-mode)         Divides two BigDecimals with     |
+        |                                            set scale and rounding mode       |
+        | multiply(value)                    multiplies 2 BigDecimals                  |
+        | setScale(scale, rounding-mode)     Sets a scale and a rounding mode          |
+        | subtract(value)                   Subtracts 2 BigDecimals                    |
+        | toString()                        BigDecimal to a String                     |
+        |------------------------------------------------------------------------------|
+        |       The Rounding Mode --- RoundingeMode.HALF_UP/HALF_EVEN                  |
+        | HALF_UP                               rounds toward nearest neighbor,        |
+        |                                        if equidistant, rounds up             |
+        | HALF_EVEN                             rounds toward nearest neighbor,        |
+        |                                        if equidistant, rounds to neighbor    |
+        |------------------------------------------------------------------------------|
+        |             salesTax = salesTax.setScale(2, RoundingMode.HALF_UP)            |
+        |-----------------------------------------------------------------------------*/
     }
 }
